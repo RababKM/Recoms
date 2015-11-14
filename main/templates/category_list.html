@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+    {% for category in categories %}
+        <a href="/category/{{ category.pk }}" color="black"><h4>{{ category.name }}</h4></a>
+    {% endfor %}
+{% endblock %}

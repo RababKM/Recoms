@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h2>Category: {{ category.name }}</h2>
+            <p>{{ category.info }}</p>
+            <h3><a href="/cat_recommendations/{{ category.pk }}">Recommendations</a></h3>
+            <div class="container">  
+                <div class="row">
+                    {% for recommendation in category.recommendation_set.all %}
+                        <li><a href="/recommendation/{{ recommendation.pk }}"><h4>{{ recommendation.name }}</h4></a></li>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

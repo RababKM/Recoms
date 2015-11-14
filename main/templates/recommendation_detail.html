@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h3>{{ recommendation.name }}</h3>
+            <h4><a href="/category/{{ recommendation.category.pk }}">Category: {{ recommendation.category }}</a></h4>
+            </br>
+            {% if recommendation.twitter %}
+                <a href="http://twitter.com/{{ recommendation.twitter }}"><i class="fa fa-twitter"></i></a>
+            {% endif %}
+            {% if recommendation.facebook %}
+                <a href="http://facebook.com/{{ recommendation.facebook }}"><i class="fa fa-facebook"></i></a>
+            {% endif %}
+            {% if recommendation.instagram %}
+                <a href="http://instagram.com/{{ recommendation.instagram }}"><i class="fa fa-instagram"></i></a>
+            {% endif %}
+            {% if recommendation.youtube %}
+                <a href="http://youtube.com/{{ recommendation.youtube }}"><i class="fa fa-youtube"></i></a>
+            {% endif %}
+            </br>
+            </br>
+            <p>{{ recommendation.info }}</p>
+            <ul>
+                {% if recommendation.phone_number %}
+                    <li><h6>Phone Number: {{ recommendation.phone_number }}</h6></li>
+                {% endif %}
+                {% if recommendation.telephone %}
+                    <li><h6>Telephone: {{ recommendation.telephone }}</h6></li>
+                {% endif %}
+                {% if recommendation.email %}
+                <li><h6>Email: {{ recommendation.email }}</h6></li>
+                {% endif %}
+                {% if recommendation.website %}
+                <li><h6>Website: <a href="http://{{ recommendation.website }}">{{ recommendation.website }}</a></h6></li>
+                {% endif %}
+                {% if recommendation.address or recommendation.map_img %}
+                <li><a href="/location/{{ recommendation.pk }}"><h6>Location and Address</h6></a></li>
+                {% endif %}
+            </ul>
+            </br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                        {% if recommendation.image1 %}
+                            <img src="{{ recommendation.image1.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image2 %}
+                            <img src="{{ recommendation.image2.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image3 %}
+                            <img src="{{ recommendation.image3.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image4 %}
+                            <img src="{{ recommendation.image4.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image5 %}
+                            <img src="{{ recommendation.image5.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image6 %}
+                            <img src="{{ recommendation.image6.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image7 %}
+                            <img src="{{ recommendation.image7.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image8 %}
+                            <img src="{{ recommendation.image8.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image9 %}
+                            <img src="{{ recommendation.image9.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                        {% if recommendation.image10 %}
+                            <img src="{{ recommendation.image10.url }}" width="500" height="auto">
+                            </br>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    {% endblock %}
